@@ -4,7 +4,10 @@ An AI-powered backend system that analyzes application logs and suggests fixes u
 ## 🌐 Live Demo
 
 https://ai-devops-assistant-jjzj.onrender.com
----
+
+### Health Check
+
+https://ai-devops-assistant-jjzj.onrender.com/api/ai/
 
 ## 🔥 Features
 

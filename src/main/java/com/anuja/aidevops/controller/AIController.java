@@ -12,12 +12,11 @@ public class AIController {
 
     private final AIService service;
 
-    // ✅ Constructor Injection
     public AIController(AIService service) {
         this.service = service;
     }
 
-    // ✅ Home endpoint (fixes Whitelabel error)
+    // ✅ Home endpoint
     @GetMapping("/")
     public Map<String, String> home() {
         return Map.of(
@@ -27,9 +26,15 @@ public class AIController {
         );
     }
 
-    // 🔍 Analyze Logs API
+    // 🔍 POST API (REAL USE)
     @PostMapping("/analyze-log")
     public AIResponse analyze(@RequestBody String log) {
+        return service.analyzeLog(log);
+    }
+
+    // 🌐 GET API (FOR BROWSER TESTING)
+    @GetMapping("/analyze-log")
+    public AIResponse analyzeFromBrowser(@RequestParam(defaultValue = "NullPointerException at UserService.java:45") String log) {
         return service.analyzeLog(log);
     }
 }
